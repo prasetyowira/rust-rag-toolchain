@@ -247,7 +247,7 @@ mod pg_vector {
 
     fn read_test_data() -> Vec<Embedding> {
         let file_string =
-            std::fs::read_to_string("tests/pg_vector_integration_test/test-data.json").unwrap();
+            std::fs::read_to_string("test-data.json").unwrap();
         let json: Vec<Value> = serde_json::from_str(&file_string).unwrap();
         let mut input_data: Vec<Embedding> = Vec::new();
 

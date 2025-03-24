@@ -8,7 +8,7 @@ async fn main() {
     const EMBEDDING_MODEL: OpenAIEmbeddingModel = OpenAIEmbeddingModel::TextEmbeddingAda002;
 
     // We read in the text from a file
-    let text = std::fs::read_to_string("examples/pg_vector/example_text.txt").unwrap();
+    let text = std::fs::read_to_string("example_text.txt").unwrap();
 
     // Create a new chunker and generate the chunks
     let chunker = TokenChunker::try_new(
