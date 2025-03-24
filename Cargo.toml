@@ -6,24 +6,6 @@ repository = "https://github.com/JackMatthewRimmer/rust-rag-toolchain"
 description = "is a Rust native library designed to empower developers with seamless access to common Gen AI workflows."
 readme = "README.md"
 license = "MIT"
-
-[[example]]
-name = "pg_vector_example"
-path = "examples/pg_vector/main.rs"
-required-features = ["pg_vector"]
-
-[[example]]
-name = "open_ai_chat_completion_example"
-path = "examples/open_ai_chat_completions/main.rs"
-
-[[example]]
-name = "basic_rag_chain_example"
-path = "examples/basic_rag_chain/main.rs"
-
-[[example]]
-name = "chat_history_chain_example"
-path = "examples/chat_history_chain/main.rs"
-
 # For integration tests
 # cargo test --test *
 
@@ -31,8 +13,7 @@ path = "examples/chat_history_chain/main.rs"
 # cargo test --lib
 
 [features]
-default = ["pg_vector", "openai", "anthropic"]
-pg_vector = ["dep:pgvector"]
+default = ["openai", "anthropic"]
 openai = ["dep:reqwest-eventsource", "dep:eventsource-stream"]
 anthropic = []
 
@@ -61,9 +42,6 @@ tokio = { version = "1.37", features = ["full"] }
 reqwest = { version = "0.12.8", features = ["json"] }
 futures = "0.3.31"
 thiserror = "2.0.0"
-
-# Postgres Vector
-pgvector = { version = "0.4.0", features = ["sqlx"], optional = true }
 
 # OpenAI
 reqwest-eventsource = { version = "0.6.0", optional = true }
